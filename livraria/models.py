@@ -15,11 +15,11 @@ class Editora(models.Model):
         return f"{self.nome} ({self.id}) "
 
 class Autor(models.Model):
-    nome = models.CharField(max_length=255)
+    nome = models.CharField(max_length=200)
     email = models.EmailField(null=True, blank=True)
 
     def __str__(self):
-        return self.nome
+        return f"{self.nome} ({self.id}) "
 
     class Meta:
         verbose_name_plural = "Autores"
@@ -35,7 +35,7 @@ class Livro(models.Model):
         Categoria, on_delete=models.PROTECT, related_name="livros", null=True, blank=True
     )
     editora = models.ForeignKey(Editora, on_delete=models.PROTECT, related_name="livros", null=True, blank=True)
-    autores = models.ManyToManyField(Autor, related_name="livros", blank=True)
+    autores = models.ManyToManyField(Autor, related_name="livros")
 
     def __str__(self):
         return f"{self.titulo} ({self.quantidade})"
