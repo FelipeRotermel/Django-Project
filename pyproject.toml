@@ -6,7 +6,7 @@ authors = [
     {name = "Felipe", email = "bolas@gmail.com"},
 ]
 dependencies = [
-    "django>=4.2.3",
+    "django>=4.2.4",
     "djangorestframework>=3.14.0",
     "django-cors-headers>=3.14.0",
     "djangorestframework-simplejwt>=5.2.2",
